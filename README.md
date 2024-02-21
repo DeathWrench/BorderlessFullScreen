@@ -10,5 +10,6 @@
 ``WinSet, Style, -0xC40000, ahk_id %WindowID%``\
 ``WinMove, ahk_id %WindowID%, , 0, 0, A_ScreenWidth, A_ScreenHeight``
 
-Could possible mess up if another window named Lethal Company is present.
+The benefit of using this is so [DXVK](https://github.com/doitsujin/dxvk) can run... as it seems to crash the game for anything other than windowed mode.
+This could possibly mess up if another window named Lethal Company is present.
 .ahk script modified from: https://www.pcgamingwiki.com/wiki/AutoHotkey#Fullscreen_toggle_script

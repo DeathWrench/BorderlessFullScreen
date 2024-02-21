@@ -1,3 +1,6 @@
+# 0.0.4
+- ``A_ScreenWidth - 0, A_ScreenHeight - 0``to ``A_ScreenWidth + 1, A_ScreenHeight + 1``\ This arithmetic fixes the resolution problem at the cost of being a pixel wider and taller.  
+
 # 0.0.3
 - ``SetTitleMatchMode, RegEx`` to ``SetTitleMatchMode, 2 SetTitleMatchMode, slow``
 - Removed ``BepInEx 5.4.22.0 - Lethal Company`` line, this makes it more consistent.

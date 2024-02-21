@@ -1,4 +1,4 @@
-# Borderless Window Mode
+# Borderless Full Screen
 - Game must be set to windowed mode for this to work properly.
 
 # Uses [AutoHotkey.Interop](https://github.com/amazing-andrew/AutoHotkey.Interop) to execute the following autohotkey script into the game at runtime.

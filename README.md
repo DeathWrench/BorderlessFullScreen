@@ -11,3 +11,4 @@
 ``WinMove, ahk_id %WindowID%, , 0, 0, A_ScreenWidth, A_ScreenHeight``\
 
 Could possible mess up if another window named Lethal Company is present.
+.ahk script modified from: https://www.pcgamingwiki.com/wiki/AutoHotkey#Fullscreen_toggle_script

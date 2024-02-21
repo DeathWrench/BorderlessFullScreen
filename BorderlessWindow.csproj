@@ -16,13 +16,7 @@
     <ReferencePath>$(ReferencePath);$(LethalCompanyPath)\BepinEx\plugins</ReferencePath>
     <ReferencePath>$(ReferencePath);$(ProjDir)</ReferencePath>
   </PropertyGroup>
-	
-  <ItemGroup>
-    <Compile Remove="ExampleConfigs\**" />
-    <EmbeddedResource Remove="ExampleConfigs\**" />
-    <None Remove="ExampleConfigs\**" />
-  </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="AutoHotkey.Interop" Version="1.0.0.1" />
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />

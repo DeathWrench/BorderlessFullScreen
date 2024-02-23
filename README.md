@@ -5,7 +5,7 @@
 
 ``procName := "UnityWndClass"``\
 ``WinGet Style, Style, % "ahk_class " procName``\
-``If (Style & 0xC40000)``
+``If (Style & 0xC40000)``\
 ``{``\
 ``WinSet, Style, -0xC40000, % "ahk_class " procName``\
 ``WinMove, % "ahk_class " procName, , 0, 0, A_ScreenWidth + 1, A_ScreenHeight + 1``\

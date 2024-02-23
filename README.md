@@ -1,5 +1,5 @@
 # Borderless Full Screen
-- Game must be set to windowed mode for this to work properly. This mod now forces the game into windowed mode.
+- Game must be set to windowed mode for this to work properly. The mod will do this for you.
 
 # Uses [AutoHotkey.Interop](https://github.com/amazing-andrew/AutoHotkey.Interop) to execute the following AutoHotkey script into the game through BepInEx.
 

@@ -1,3 +1,6 @@
+# 0.0.7
+- Fix the resolution being slightly incorrect.
+
 # 0.0.6
 - Used a different code from StackOverflow that should only mess up now if another Unity game is active. Whereas before it would sometimes mess up if another window that had Lethal Company in it was present.
 

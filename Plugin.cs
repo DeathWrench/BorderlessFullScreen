@@ -12,7 +12,7 @@ namespace BorderlessFullScreen
         void Start()
         {
             var ahk = AutoHotkeyEngine.Instance; 
-            ahk.ExecRaw("procName := \"UnityWndClass\"\r\nWinGet Style, Style, % \"ahk_class \" procName\r\nIf (Style & 0xC40000)\r\n{\r\nWinSet, Style, -0xC40000, % \"ahk_class \" procName\r\nWinMaximize, % \"ahk_class \" procName\r\n}\r\nReturn");
+            ahk.ExecRaw("procName := \"UnityWndClass\"\r\nWinGet Style, Style, % \"ahk_class \" procName\r\nIf (Style & 0xC40000)\r\n{\r\nWinSet, Style, -0xC40000, % \"ahk_class \" procName\r\nWinMove, % \"ahk_class \" procName, , 0, 0, A_ScreenWidth + 1, A_ScreenHeight + 1\r\nWinMove, % \"ahk_class \" procName, , 0, 0, A_ScreenWidth, A_ScreenHeight\r\n}\r\nReturn");
             Logger.LogInfo($"Plugin {"BorderlessFullScreen"} is loaded!");
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
         }

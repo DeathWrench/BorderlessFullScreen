@@ -1,3 +1,9 @@
+# 0.0.9
+- Force the game into windowed mode if it's not.
+
+# 0.0.8
+- Fixed mod icon.
+
 # 0.0.7
 - Fix the resolution being slightly incorrect.
 

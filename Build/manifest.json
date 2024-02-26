@@ -1,10 +1,11 @@
 {
     "name": "BorderlessFullScreen",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/DeathWrench/BorderlessFullScreen",
     "description": "Uses AutoHotkey.Interop to run an AutoHotkey script that fullscreens the game from windowed mode through BepInEx.",
-    "dependencies": [
-        "BepInEx-BepInExPack-5.4.2100",
+    "dependencies": 
+    [
+    "BepInEx-BepInExPack-5.4.2100",
 		"DeathWrench-AutoHotkeyInterop-1.0.0"
     ]
 }

@@ -1,3 +1,6 @@
+# 1.0.1
+- in 1.0.0 there was a chance to not work properly, so resolution is + 1 pixel taller and wider again.
+
 # 1.0.0
 - Fix resolution problem once and for all.
 

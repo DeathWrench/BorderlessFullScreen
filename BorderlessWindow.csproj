@@ -48,10 +48,6 @@
     </Reference>
   </ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Build\" />
-	</ItemGroup>
-
    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(ProjDir)Build&quot;  &#xD;&#xA;" />
   </Target>

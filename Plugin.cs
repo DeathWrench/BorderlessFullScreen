@@ -7,7 +7,7 @@ using UnityEngine.Video;
 
 namespace BorderlessFullScreen
 {
-    [BepInPlugin("BorderlessFullScreen", "BorderlessFullScreen", "1.0.0")]
+    [BepInPlugin("BorderlessFullScreen", "BorderlessFullScreen", "1.0.1")]
     [HarmonyPatch]
     public class BorderlessFullScreen : BaseUnityPlugin
     {

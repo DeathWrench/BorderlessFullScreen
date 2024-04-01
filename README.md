@@ -4,7 +4,7 @@
 #### 2.0.0: Mod doesn't do this anymore to maintain compatibility with other games that can also utilize BepInEx
 
 # 2.0.0
-No longer use Autohotkey.Interop dependency, instead just do what autohotkey does:
+No longer use Autohotkey.Interop dependency, instead just do what the ahk script did:
 ```
 public class BorderlessFullScreenPlugin : BaseUnityPlugin
 {

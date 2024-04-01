@@ -1,6 +1,12 @@
 # Borderless Full Screen
-- Game must be set to windowed mode for this to work properly. The mod will do this for you.
+- Game must be set to windowed mode for this to work properly. 
+#### 1.0.1: The mod will do this for you.
+#### 2.0.0: Mod doesn't do this anymore to maintain compatibility with other games that can also utilize BepInEx
 
+# 2.0.0
+No longer use Autohotkey.Interop dependency
+
+# Old Description for version 1.0.1
 # Uses [AutoHotkey.Interop](https://github.com/amazing-andrew/AutoHotkey.Interop) to execute the following AutoHotkey script into the game through BepInEx.
 
 ``procName := "UnityWndClass"``\

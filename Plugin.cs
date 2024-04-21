@@ -1,28 +1,46 @@
-using AutoHotkey.Interop;
+using System;
+using System.Runtime.InteropServices;
 using BepInEx;
-using HarmonyLib;
-using System.Reflection;
 using UnityEngine;
-using UnityEngine.Video;
 
-namespace BorderlessFullScreen
+[BepInPlugin($"{PLUGIN_GUID}", $"{PLUGIN_NAME}", $"{PLUGIN_VERSION}")]
+public class BorderlessFullScreenPlugin : BaseUnityPlugin
 {
-    [BepInPlugin("BorderlessFullScreen", "BorderlessFullScreen", "1.0.1")]
-    [HarmonyPatch]
-    public class BorderlessFullScreen : BaseUnityPlugin
+    public const string PLUGIN_GUID = "DeathWrench.BorderlessFullscreen";
+    public const string PLUGIN_NAME = "Borderless Fullscreen";
+    public const string PLUGIN_VERSION = "2.0.1";
+    [DllImport("user32.dll")]
+    private static extern IntPtr FindWindow(string className, string windowName);
+
+    [DllImport("user32.dll")]
+    private static extern int GetWindowLong(IntPtr hWnd, int index);
+
+    [DllImport("user32.dll")]
+    private static extern int SetWindowLong(IntPtr hWnd, int index, int value);
+
+    [DllImport("user32.dll")]
+    private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int width, int height, uint flags);
+
+    private const int GWL_STYLE = -16;
+    private const uint SWP_FRAMECHANGED = 0x0020;
+    private const uint SWP_SHOWWINDOW = 0x0040;
+
+    private void Start()
     {
-        void Start()
+        IntPtr hWnd = FindWindow("UnityWndClass", null);
+        if (hWnd != IntPtr.Zero)
         {
-            var ahk = AutoHotkeyEngine.Instance; 
-            ahk.ExecRaw("procName := \"UnityWndClass\"\r\nWinGet Style, Style, % \"ahk_class \" procName\r\nIf (Style & 0xC40000)\r\n{\r\nWinSet, Style, -0xC40000, % \"ahk_class \" procName\r\nWinMove, % \"ahk_class \" procName, , 0, 0, A_ScreenWidth + 1, A_ScreenHeight + 1\r\n}\r\nReturn");
-            Logger.LogInfo($"Plugin {"BorderlessFullScreen"} is loaded!");
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
+            int style = GetWindowLong(hWnd, GWL_STYLE);
+            style &= ~0xC40000;
+            SetWindowLong(hWnd, GWL_STYLE, style);
+
+            SetWindowPos(hWnd, IntPtr.Zero, 0, 0, Screen.width, Screen.height, SWP_FRAMECHANGED | SWP_SHOWWINDOW);
         }
-        [HarmonyPatch(typeof(IngamePlayerSettings), "SetFullscreenMode")]
-        [HarmonyPrefix]
-        private static void SetFullscreenMode(int value)
+        else
         {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
+            Debug.LogError("Unity window not found.");
         }
+
+        Debug.Log($"Plugin {PLUGIN_NAME} {PLUGIN_VERSION} is loaded!");
     }
 }

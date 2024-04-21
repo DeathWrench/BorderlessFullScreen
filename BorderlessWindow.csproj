@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
     <LethalCompanyPath>C:\Program Files (x86)\Steam\steamapps\common\Lethal Company</LethalCompanyPath>
+	  <LangVersion>preview</LangVersion>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -16,17 +17,23 @@
     <ReferencePath>$(ReferencePath);$(LethalCompanyPath)\BepinEx\plugins</ReferencePath>
     <ReferencePath>$(ReferencePath);$(ProjDir)</ReferencePath>
   </PropertyGroup>
-
+	
+	<ItemGroup>
+		<Import Include="System.Data" />
+		<Import Include="System.Drawing" />
+		<Import Include="System.Windows.Forms" />
+	</ItemGroup>
+	
   <ItemGroup>
     <PackageReference Include="AutoHotkey.Interop" Version="1.0.0.1" />
-    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.BaseLib" Version="5.4.20" />
     <PackageReference Include="BepInEx.Core" Version="5.*" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" IncludeAssets="compile" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" IncludeAssets="compile" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" IncludeAssets="compile" />
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile" />
-    <PackageReference Include="HarmonyX" Version="2.10.2" IncludeAssets="compile" />
+    <PackageReference Include="HarmonyX" Version="2.12.0" IncludeAssets="compile" />
   </ItemGroup>
 
   <ItemGroup>

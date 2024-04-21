@@ -1,9 +1,11 @@
 # Borderless Full Screen
 - Game must be set to windowed mode for this to work properly. 
-#### 1.0.1: The mod will do this for you.
-#### 2.0.0: Mod doesn't do this anymore to maintain compatibility with other games that can also utilize BepInEx
+#### -1.0.1: The mod will do this for you.
+#### +2.0.0: Mod doesn't do this anymore to maintain compatibility with other games that can also utilize BepInEx, you can use the command below to ensure the game starts in windowed mode.
+### Launch Unity games in windowed mode with this command:
+```-screen-fullscreen 0```
 
-# 2.0.0
+# 2.0.0+
 No longer use Autohotkey.Interop dependency, instead just do what the ahk script did:
 ```
 public class BorderlessFullScreenPlugin : BaseUnityPlugin
